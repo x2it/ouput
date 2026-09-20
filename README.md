@@ -62,17 +62,17 @@ ADMIN_PASSWORD=请设置一个强密码
 AUTH_SECRET=请生成一个随机字符串
 
 # 必填：Supabase 项目 URL（Dashboard → Settings → API）
-COZE_SUPABASE_URL=https://xxxx.supabase.co
+SUPABASE_URL=https://xxxx.supabase.co
 
 # 必填：Supabase 匿名 key（Dashboard → Settings → API → anon public）
-COZE_SUPABASE_ANON_KEY=eyJhbGciOi...
+SUPABASE_ANON_KEY=eyJhbGciOi...
 
 # 必填：Supabase service_role key（Dashboard → Settings → API → service_role）
 # ⚠️ 该 key 拥有最高权限，仅服务端使用，切勿泄露
-COZE_SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOi...
+SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOi...
 
 # 可选：公网域名（用于 cookie 域匹配，如 https://your-domain.com）
-COZE_PROJECT_DOMAIN_DEFAULT=
+PROJECT_DOMAIN_DEFAULT=
 
 # 可选：服务端口（默认 5000）
 DEPLOY_RUN_PORT=5000
@@ -133,9 +133,9 @@ docker build -t 7miao-warehouse .
 docker run -d -p 5000:5000 \
   -e ADMIN_PASSWORD=xxx \
   -e AUTH_SECRET=xxx \
-  -e COZE_SUPABASE_URL=xxx \
-  -e COZE_SUPABASE_ANON_KEY=xxx \
-  -e COZE_SUPABASE_SERVICE_ROLE_KEY=xxx \
+  -e SUPABASE_URL=xxx \
+  -e SUPABASE_ANON_KEY=xxx \
+  -e SUPABASE_SERVICE_ROLE_KEY=xxx \
   --name 7miao 7miao-warehouse
 ```
 
@@ -201,10 +201,10 @@ src/
 |------|------|------|
 | `ADMIN_PASSWORD` | ✅ | 管理员密码（未设置则禁止登录） |
 | `AUTH_SECRET` | ✅ | HMAC token 签名密钥 |
-| `COZE_SUPABASE_URL` | ✅ | Supabase 项目 URL |
-| `COZE_SUPABASE_ANON_KEY` | ✅ | Supabase 匿名 key |
-| `COZE_SUPABASE_SERVICE_ROLE_KEY` | ✅ | Supabase 服务端 key（勿泄露） |
-| `COZE_PROJECT_DOMAIN_DEFAULT` | ❌ | 公网域名（cookie 域） |
+| `SUPABASE_URL` | ✅ | Supabase 项目 URL |
+| `SUPABASE_ANON_KEY` | ✅ | Supabase 匿名 key |
+| `SUPABASE_SERVICE_ROLE_KEY` | ✅ | Supabase 服务端 key（勿泄露） |
+| `PROJECT_DOMAIN_DEFAULT` | ❌ | 公网域名（cookie 域） |
 | `DEPLOY_RUN_PORT` | ❌ | 服务端口（默认 5000） |
 
 ## 📜 开源许可
