@@ -63,7 +63,7 @@
 ### 安全修复
 - **HMAC 签名认证**：将明文 `'authenticated'` cookie 替换为 HMAC-SHA256 签名 token，防止 cookie 被窃取后无限期使用
 - **API 鉴权**：为所有写接口（works/POST|PUT|DELETE, config/POST, batch, pin, reorder, init-config, backup, export）添加统一鉴权
-- **CORS 白名单**：限制 `Access-Control-Allow-Origin` 为白名单域名（`COZE_PROJECT_DOMAIN_DEFAULT` + `localhost`），防止任意网站跨域调用
+- **CORS 白名单**：限制 `Access-Control-Allow-Origin` 为白名单域名（`PROJECT_DOMAIN_DEFAULT` + `localhost`），防止任意网站跨域调用
 - **安全响应头**：添加 `X-Content-Type-Options: nosniff`、`X-Frame-Options: DENY`、`Referrer-Policy: strict-origin-when-cross-origin`、`Permissions-Policy: camera=(), microphone=(), geolocation=()`
 - **debug 页面保护**：`/debug` 页面和 `/api/auth/debug` 接口要求登录，未授权访问返回 401 或重定向到 `/login`
 - **Token 防重放**：HMAC token 包含 8 字节 nonce + 时间戳 + 签名，防止重放攻击
