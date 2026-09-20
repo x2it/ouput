@@ -76,7 +76,7 @@
 - **embed-content.tsx order 字段**：删除多余的 `order` 字段，统一使用 `sort_order`
 - **embed/page.tsx RawWork 类型**：修复 `link`/`image` 类型不匹配
 - **embed-content.tsx href 处理**：修复 `href={work.link}` 当 link 为 null 时的处理，改为 `href={work.link || '#'}`
-- **getSupabaseAdmin fallback**：当 `COZE_SUPABASE_SERVICE_ROLE_KEY` 未设置时，输出醒目警告而非静默降级
+- **getSupabaseAdmin fallback**：当 `SUPABASE_SERVICE_ROLE_KEY` 未设置时，输出醒目警告而非静默降级
 - **reorderWorks 性能优化**：从串行逐条 UPDATE 改为 `Promise.all` 并行执行，减少数据库请求次数
 
 ### 代码质量
